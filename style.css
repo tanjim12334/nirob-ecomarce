@@ -95,28 +95,28 @@ color: rgb(255, 162, 2);
 
 }
 
-.navbar-light .navbar-nev .nav-link {
+.navbar-light .navbar-nav .nav-link {
   padding: 0 20px;
   color: rgb(0, 0, 0);
   transition: 0.3s ease;
 }
-.navbar-light .navbar-nev .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:hover,
 .navbar i:hover,
-.navbar-light .navbar-nev .nav-link.active,
+.navbar-light .navbar-nav .nav-link.active,
 .navbar i.active {
-  color: #f84307;
+  color: #f66d05db;
 }
-.navbar i{
- font-size: 1.2em;
- padding: 0 7px;
- cursor: pointer;
- font-weight: 500;
- transition: 0.3s ease;
 
+/* Navbar আইকনের স্টাইল */
+.navbar i {
+  font-size: 1.5rem; /* আইকনের সাইজ */
+  padding: 0 8px;
+  color: rgb(230, 0, 99); /* কালার */
+  transition: 0.3s ease;
 }
-   #bar:hover, 
-   #bar.active {
-color: #f84307;
+
+.navbar i:hover {
+  color: #ff9100; /* হোভার হলে রঙ পরিবর্তন */
 }
 
 @media only screen and (max-width: 991px) {
@@ -381,48 +381,57 @@ footer .copyright a:hover{
 
 #blog-container .post:hover h3 {
   color: #f50c0c;
-}
-
-#cart-container table {
+}#cart-container table {
   border-collapse: collapse;
   width: 100%;
-  table-layout: fixed;
-
+  table-layout: auto; /* 'fixed' এর পরিবর্তে auto যাতে টেবিল কলামগুলি স্বতঃস্ফূর্তভাবে আকার নিতে পারে */
 }
+
 #cart-container table thead {
-font-weight: 700;
+  font-weight: 700;
+  background-color: #f50c0c; /* হেডার ব্যাকগ্রাউন্ড কালার */
 }
 
-#cart-container table thead td {
-  background-color: #f50c0c;
-  color: #fffdfd;
-  border: none;
-  padding: 6px 0;
-  }
+#cart-container table th, #cart-container table td {
+  text-align: center; /* সেন্টার এ্যালাইনমেন্ট */
+  padding: 10px; /* সব সেলে প্যাডিং */
+  border: 1px solid #d8d8d8; /* সেলের বর্ডার */
+}
+
+#cart-container table th {
+  color: #fffdfd; /* হেডারের টেক্সট কালার */
+}
 
 #cart-container table td {
-  border: 1px solid #d8d8d8;
+  vertical-align: middle; /* সেলের মধ্যে সঠিকভাবে মাঝখানে টেক্সট */
+}
+
+#cart-container table td:nth-child(1) {
+  width: 120px; /* রিমুভ/রিডাক্ট সেল এর জন্য যথাযথ স্পেস */
+}
+
+#cart-container table td:nth-child(2),
+#cart-container table td:nth-child(3) {
+  width: 200px; /* চিত্র এবং প্রোডাক্টের জন্য যথাযথ আকার */
+}
+
+#cart-container table td:nth-child(4),
+#cart-container table td:nth-child(5),
+#cart-container table td:nth-child(6) {
+  width: 150px; /* মূল্য, পরিমাণ, মোটের জন্য ছোট আকার */
+}
+
+#cart-container table tbody img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover; /* ছবির সঠিক ফিট */
+}
+
+/* Styling for input fields */
+#cart-container input[type="number"] {
+  width: 60px;
+  padding: 5px;
   text-align: center;
-  }
-  #cart-container table td:nth-child(1) {
-    width: 100px;
-
-  }
-
-  #cart-container table td:nth-child(2),
-  #cart-container table td:nth-child(3) {
-    width: 200px;
-
-  }
-  #cart-container table td:nth-child(4),
-  #cart-container table td:nth-child(5),
-  #cart-container table td:nth-child(6) {
-   
-    width: 1700px;
-  }
-  #cart-container table tbody img {
-    width: 100px;
-    height: 80px;
-    object-fit: cover;
-
-  }
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
